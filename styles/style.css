@@ -1,0 +1,164 @@
+* {
+   font-family: 'Roboto', sans-serif;
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+   background:#0F0D13;   
+}
+
+#app {
+   display: grid;
+   grid-template-columns: max-content max-content;
+   grid-template-areas:
+   "A B"
+   "A C";
+   gap: 32px;
+
+   height: 100vh;
+   place-content: center;
+}
+
+.player {
+   background: linear-gradient(20deg, #2A2141 20%, #2d263d 45%, #82667f); 
+   padding: 35px;
+   border-radius: 10px;
+}
+
+.player img {
+   width: 84px;
+   height: 84px;
+   object-fit: cover;
+   border-radius: 6px;
+}
+
+/* PLAYER 1 */
+#player-1 {
+   grid-area: A;
+   padding: 40px 35px;
+   display: flex;
+   align-items: center;
+}
+
+#player-1 .wrapper {
+   width: 200px;
+}
+
+#player-1 img {
+   width: 100%;
+   height: 190px;
+   object-fit: cover;
+   border-radius: 6px;
+}
+
+/* INFO */
+.info {
+   color: #E1E1E6;
+   display: grid;
+   gap: 9.6px;
+}
+
+.info h1 {
+   font-size: 24px;
+   font-weight: 700;
+}
+
+.info p {
+   opacity: 0.67;
+   font-size: 19px;
+}
+
+.wrapper {
+   display: grid;
+   gap: 28px;
+}
+
+.info-wrapper {
+   display: flex;
+   gap: 28px;
+   align-items: center;
+}
+
+.controls {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.track {
+   display: flex;
+   height: 8px;
+}
+
+progress {
+   -webkit-appearance: none;
+   -moz-appearance: none;
+   appearance: none;
+
+   width: 100%;
+   background-color: #878787;
+   
+   /* Para ter efeiro no Firefox */
+   border-radius: 6px;
+   height: 8px;
+   /* Tirar a borda default do Firefox. */
+   border: none;
+   /* Para a sombra ter efeito na parte de trás (max) da barra no Firefox */
+   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset
+}
+
+::-moz-progress-bar {
+   background-color: #D9D9D9;
+   /* Para a sombra ter efeito na parte da frente (value) da barra no Firefox */
+   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+}
+
+::-webkit-progress-value {
+   background-color: #D9D9D9;
+}
+
+::-webkit-progress-bar {
+   background-color: #878787;
+}
+
+::-webkit-progress-bar, ::-webkit-progress-value {
+   border-radius: 6px;
+   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+}
+
+.time {
+   font-size: 10px;
+   color: #C4C4CC;
+   opacity: 0.7;
+
+   display: flex;
+   justify-content: space-between;
+
+   margin-top: 10px;
+}
+
+.inactive {
+   display: none;
+}
+
+.active {
+   display: block;
+}
+
+@media screen and (max-width: 500px) {
+   
+   #app {
+      display: flex;
+      flex-direction: column;
+      max-width: 265px;
+      margin: auto;
+   }
+   #player-1 {
+      padding: 40px 30px;
+   }
+   #player-1 .wrapper {
+      width: 100%;
+   }
+   
+}
